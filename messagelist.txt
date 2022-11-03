@@ -1,0 +1,180 @@
+ return Center(
+          child: Card(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 70,bottom: 1,right: 1),
+                      child:Text(messageList[index].date ?? "",style: TextStyle(height: 1)),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 110,right: 1),
+                      child:Text(messageList[index].priority ?? "",style: TextStyle(height: 1),),
+                    )
+
+                  ],
+                ),
+                 ListTile(
+                  leading: Icon(Icons.album),
+                  title: Text(messageList[index].subject ?? "",style: TextStyle(height: 2,fontWeight: FontWeight.w600,fontSize: 16),),
+                  subtitle: Text(messageList[index].message ?? "",style: TextStyle(height: 1,fontWeight: FontWeight.w400,fontSize: 15),),
+                ),
+                /*Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    TextButton(
+                      child: const Text('BUY TICKETS'),
+                      onPressed: () {*//* ... *//*},
+                    ),
+                    const SizedBox(width: 8),
+                    TextButton(
+                      child: const Text('LISTEN'),
+                      onPressed: () {*//* ... *//*},
+                    ),
+                    const SizedBox(width: 8),
+                  ],
+                ),*/
+              ],
+            ),
+          ),
+        );
+        /*return Container(
+          child: Column(
+            children: <Widget>[
+              Card(
+                color:Colors.grey[200],
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Flexible(
+                      flex: 2,
+                      child: ListTile(
+                        title: Text(messageList[index].message ?? ""),
+                      ),
+                    ),
+
+                    Flexible(
+                      flex: 2,
+                      child: ListTile(
+                        title: Text(messageList[index].date ?? ""),
+                      ),
+                    ),
+                    Flexible(
+                      flex: 1,
+                      child: ListTile(
+                        title: Text(
+                          " ",
+                        ),
+                        leading: Icon(Icons.message),
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  content: Stack(
+                                    overflow: Overflow.visible,
+                                    children: <Widget>[
+                                      Positioned(
+                                        right: -40.0,
+                                        top: -40.0,
+                                        child: InkResponse(
+                                          onTap: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: CircleAvatar(
+                                            child: Icon(Icons.close),
+                                            backgroundColor: Colors.red,
+                                          ),
+                                        ),
+                                      ),
+                                      Form(
+                                        //key: _formKey,
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: <Widget>[
+                                            Padding(
+                                              padding: EdgeInsets.all(8.0),
+                                              child: Text(
+                                                  messageList[index].message ??
+                                                      ""),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsets.all(8.0),
+                                              child: TextFormField(
+                                                controller: messageController,
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: RaisedButton(
+                                                child: Text("Submit"),
+                                                onPressed: () {
+                                                  //Navigator.of(context).pop();
+
+                                                  _reply(
+                                                      cubitContext,
+                                                      msgState,
+                                                      messageController.text,
+                                                      messageList[index].id);
+                                                  messageController.text = "";
+
+                                                },
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              });
+                        },
+                      ),
+                    )
+                  ],
+                ),
+              ),
+
+            ],
+          ),
+        );*/
+
+        /*return GestureDetector(
+          onTap: (){
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => LoyaltyEventDetailScreen(loyaltyEventList[index].id)));
+          },
+          child: Container(
+            child: Column(
+              children: <Widget>[
+                Row(
+
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Expanded(
+                      child: ListTile(
+                        title: Text(loyaltyEventList[index].title??""),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListTile(
+                        title: Text(loyaltyEventList[index].startDate??""),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListTile(
+                        title: Text(loyaltyEventList[index].endDate??""),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+        );*/
